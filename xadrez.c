@@ -7,6 +7,8 @@
 int MOVIMENTO_BISPO = 5;    // 5 casas na diagonal superior direita
 int MOVIMENTO_TORRE = 5;    // 5 casas para a direita
 int MOVIMENTO_RAINHA = 8;   // 8 casas para a esquerda
+int CAVALO_MOVIMENTO_BAIXO = 2;    // Duas casas para baixo
+int CAVALO_MOVIMENTO_ESQUERDA = 1; // Uma casa para a esquerda
 
 int main() {
     // Variáveis para controle dos loops
@@ -55,20 +57,54 @@ int main() {
         movimento++;
     } while(movimento <= MOVIMENTO_RAINHA);
     printf("\n");
-    
-    
-    
-    printf("\n=== RELATÓRIO DE EXECUÇÃO ===\n");
-    printf("✅ Bispo: %d movimentos diagonais executados\n", MOVIMENTO_BISPO);
-    printf("✅ Torre: %d movimentos horizontais executados\n", MOVIMENTO_TORRE);
-    printf("✅ Rainha: %d movimentos para esquerda executados\n", MOVIMENTO_RAINHA);
-    printf("✅ Todas as estruturas de repetição utilizadas: FOR, WHILE, DO-WHILE\n");
-    printf("✅ Jogo executado com sucesso!\n");
-    
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
+    // MOVIMENTO DO CAVALO - Usando loops aninhados (FOR + DO-WHILE)
+    printf("🔹 MOVIMENTO DO CAVALO (movimento em L: 2 casas para baixo + 1 casa para esquerda)\n");
+    printf("Utilizando loops aninhados (FOR externo + DO-WHILE interno):\n");     
+   
+    // Loop externo FOR - controla o número total de movimentos em "L"
+    for(int movimento_l = 1; movimento_l <= 1; movimento_l++) {
+        printf("\n--- Executando movimento em L do Cavalo ---\n");
+        
+        // Primeira parte do movimento: 2 casas para baixo
+        printf("Primeira parte do L (vertical):\n");
+        int passos_baixo = 1;
+        do {
+            printf("Passo %d: ", passos_baixo);
+            printf("Baixo\n");
+            passos_baixo++;
+        } while(passos_baixo <= CAVALO_MOVIMENTO_BAIXO);
+        
+        // Segunda parte do movimento: 1 casa para a esquerda
+        printf("Segunda parte do L (horizontal):\n");
+        int passos_esquerda = 1;
+        do {
+            printf("Passo %d: ", passos_esquerda);
+            printf("Esquerda\n");
+            passos_esquerda++;
+        } while(passos_esquerda <= CAVALO_MOVIMENTO_ESQUERDA);
+        
+        printf("🔹 Movimento em L completado!\n");
+    }
+    printf("\n");
+    
+    
+    
+    printf("\n=== RELATÓRIO DE EXECUÇÃO ===\n");
+    printf("\n=== RELATÓRIO DE EXECUÇÃO COMPLETO ===\n");
+    printf("✅ Bispo: %d movimentos diagonais executados\n", MOVIMENTO_BISPO);
+    printf("✅ Torre: %d movimentos horizontais executados\n", MOVIMENTO_TORRE);
+    printf("✅ Rainha: %d movimentos para esquerda executados\n", MOVIMENTO_RAINHA);
+    printf("✅ Cavalo: Movimentos em L executados (2 baixo + 1 esquerda)\n");
+    printf("✅ Loops aninhados implementados: FOR + DO-WHILE e FOR + WHILE\n");
+    printf("✅ Todas as estruturas de repetição utilizadas: FOR, WHILE, DO-WHILE\n");
+    printf("✅ Sistema completo executado com sucesso!\n");
+    
+
+   
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
